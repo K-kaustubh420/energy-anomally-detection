@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Leaf } from 'lucide-react';
+import Link from 'next/link';
 
 /* ----------------------------------
    Types (fix TS errors)
@@ -168,7 +169,7 @@ const Navbar = () => {
           <button className="relative group px-8 py-3 bg-black dark:bg-white text-white dark:text-black rounded-md overflow-hidden">
             <div className="absolute inset-0 bg-green-300 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             <span className="relative z-10 text-[11px] uppercase tracking-[0.2em] font-black group-hover:text-black">
-              Get Started
+             <Link href="/stream">Get Started</Link>
             </span>
           </button>
         </div>
