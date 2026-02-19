@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/hero'
 import AnalyticsAndMetrics from './components/Analytics'
+import Comparison from './components/Comparison'
 
 const page = () => {
   return (
@@ -9,6 +10,7 @@ const page = () => {
     <Navbar/>
     <Hero/>
     <AnalyticsAndMetrics/>
+    <Comparison/>
     </div>
   )
 }
