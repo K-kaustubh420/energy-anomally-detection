@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Dashboard from './dashboard'
 
 const page = () => {
   return (
-    <div><Dashboard/></div>
+    <Suspense fallback={<div className="min-h-screen bg-white dark:bg-[#050505]"></div>}>
+      <Dashboard/>
+    </Suspense>
   )
 }
 
