@@ -175,7 +175,7 @@ export default function AnalyticsAndMetrics() {
     fetch('/api/modelevaluationmetrics')
       .then(res => res.json())
       .then(setData)
-      .catch(err => console.error("Failed to load metrics", err))
+      .catch(err => console.error('Failed to load metrics', err))
   }, [])
 
   if (!data) return <div className="h-screen bg-[#050505] flex items-center justify-center text-cyan-500 font-mono animate-pulse">INITIALIZING ANALYTICS ENGINE...</div>
