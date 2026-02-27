@@ -214,11 +214,11 @@ export default function AnalyticsAndMetrics() {
             <div className="grid grid-cols-2 gap-4 w-full xl:w-auto">
               <div className="bg-white/5 p-4 rounded-lg border border-white/10 backdrop-blur-sm">
                 <p className="text-xs text-gray-500 font-mono">PRECISION</p>
-                <p className="text-3xl font-bold text-cyan-400">{data.metrics.precision}</p>
+                <p className="text-3xl font-bold text-cyan-400">{data.metrics.precision ?? '—'}</p>
               </div>
               <div className="bg-white/5 p-4 rounded-lg border border-white/10 backdrop-blur-sm">
                 <p className="text-xs text-gray-500 font-mono">LATENCY (Edge)</p>
-                <p className="text-3xl font-bold text-amber-400">{data.metrics.inference_time}ms</p>
+                <p className="text-3xl font-bold text-amber-400">{data.metrics.inference_time ?? '—'}ms</p>
               </div>
             </div>
           </motion.div>

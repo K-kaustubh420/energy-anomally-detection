@@ -34,8 +34,8 @@ export default function GenerateReports() {
   }
 
   return (
-    <section className="bg-[#050505] text-white px-4 md:px-8 pb-12 font-sans">
-      <div className="max-w-[1600px] mx-auto">
+    <div className="bg-[#050505] text-white px-4 md:px-8 pb-12 font-sans">
+      <div className="max-w-400 mx-auto">
         <div className="mt-8 rounded-2xl border border-white/10 bg-[#0a0a0a] p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
             <h2 className="text-xl md:text-2xl font-bold flex items-center gap-2">
@@ -90,7 +90,7 @@ export default function GenerateReports() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

@@ -7,7 +7,7 @@ import GenerateReports from './components/GenerateReports'
 
 const page = () => {
   return (
-    <div>
+    <div className='bg-black/85'>
       <Navbar />
       <Hero />
       <AnalyticsAndMetrics />

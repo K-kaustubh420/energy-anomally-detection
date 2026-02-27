@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 from app.schemas import EnergyInput, PredictionResponse, WindowInput, AnalyticsResponse
 from app.model import predict_energy, model, scaler # Import model/scaler for window logic
+from app.evaluation import build_model_evaluation_payload
 
 app = FastAPI(title="Energy Anomaly Detection API")
 
@@ -65,3 +66,11 @@ def analyze_window(data: WindowInput):
         "diagnostic": diag,
         "recommendation": rec
     }
+
+
+@app.get("/model-evaluation")
+def model_evaluation():
+    """
+    Returns real model-evaluation payload derived from trained artifacts + dataset.
+    """
+    return build_model_evaluation_payload()

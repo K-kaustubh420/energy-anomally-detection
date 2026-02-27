@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Activity, ShieldAlert, CheckCircle, ArrowLeft, Timer, BarChart3, Zap, BrainCircuit, X } from 'lucide-react';
 import Link from 'next/link';
 
+const BACKEND_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_API_URL || 'http://localhost:8000';
+
 export default function Dashboard() {
   const searchParams = useSearchParams();
   const streamId = searchParams.get('id');
@@ -33,7 +35,7 @@ export default function Dashboard() {
         const val = Math.round(activeStream?.currentUsage || 0);
         setCurrentKW(val);
 
-        const predictRes = await fetch('http://localhost:8000/predict', {
+        const predictRes = await fetch(`${BACKEND_BASE_URL}/predict`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ energy: val })
@@ -68,7 +70,7 @@ export default function Dashboard() {
     setIsMonitoring(false);
     setIsDiagnosticMode(false);
     try {
-        const res = await fetch('http://localhost:8000/analyze-window', {
+        const res = await fetch(`${BACKEND_BASE_URL}/analyze-window`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ readings: windowBuffer })
