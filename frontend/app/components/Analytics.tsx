@@ -101,7 +101,7 @@ const ResearchComparisonSection = ({ papers, radarData }: { papers: ResearchPape
           </h3>
           <p className="text-center text-xs text-gray-500 mb-6">Visualizing the Efficiency vs. Accuracy Trade-off</p>
           
-          <div className="h-[350px] w-full">
+          <div className="h-87.5 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart outerRadius={110} data={radarData}>
                 <PolarGrid stroke="#333" />
@@ -144,16 +144,16 @@ const ResearchComparisonSection = ({ papers, radarData }: { papers: ResearchPape
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
                 <div className="p-3 rounded bg-emerald-900/10 border border-emerald-500/10 text-emerald-400/90">
-                  <span className="font-bold block mb-1 text-emerald-500 flex items-center gap-1"><CheckCircle size={10}/> STRENGTH</span>
+                  <span className="font-bold block mb-1 text-emerald-500 items-center gap-1"><CheckCircle size={10}/> STRENGTH</span>
                   {paper.pros}
                 </div>
                 <div className="p-3 rounded bg-red-900/10 border border-red-500/10 text-red-400/90">
-                  <span className="font-bold block mb-1 text-red-500 flex items-center gap-1"><Activity size={10}/> LIMITATION</span>
+                  <span className="font-bold block mb-1 text-red-500 items-center gap-1"><Activity size={10}/> LIMITATION</span>
                   {paper.cons}
                 </div>
                 <div className="p-3 rounded bg-cyan-900/10 border border-cyan-500/10 text-cyan-400/90 relative overflow-hidden">
                    <div className="absolute top-0 right-0 p-1 opacity-10"><Zap size={40}/></div>
-                  <span className="font-bold block mb-1 text-cyan-400 flex items-center gap-1"><Zap size={10}/> OUR SOLUTION</span>
+                  <span className="font-bold block mb-1 text-cyan-400 items-center gap-1"><Zap size={10}/> OUR SOLUTION</span>
                   {paper.our_advantage}
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function AnalyticsAndMetrics() {
 
   return (
     <section className="min-h-screen bg-[#050505] text-white px-4 md:px-8 py-12 font-sans selection:bg-cyan-500/30">
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-400 mx-auto">
         
         {/* 1. HEADER */}
         <div className="mb-12 border-b border-white/10 pb-8">
@@ -200,7 +200,7 @@ export default function AnalyticsAndMetrics() {
                   <Database size={12}/> UCI Appliances Dataset
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-black bg-gradient-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent mb-4">
+              <h1 className="text-4xl md:text-6xl font-black bg-linear-to-r from-white via-gray-200 to-gray-500 bg-clip-text text-transparent mb-4">
                 Energy Anomaly Detection
               </h1>
               <p className="text-gray-400 text-sm md:text-base leading-relaxed border-l-2 border-cyan-500 pl-4">
@@ -231,7 +231,7 @@ export default function AnalyticsAndMetrics() {
             
             {/* A. MULTIVARIATE ANALYSIS */}
             <div className="p-6 rounded-2xl bg-[#0a0a0a] border border-white/10 shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl -z-0 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl z-0 pointer-events-none"></div>
               <div className="flex justify-between items-center mb-6 relative z-10">
                 <div>
                   <h3 className="font-bold text-lg flex items-center gap-2 text-white">
@@ -242,7 +242,7 @@ export default function AnalyticsAndMetrics() {
                 </div>
               </div>
               
-              <div className="h-[400px] relative z-10">
+              <div className="h-100 relative z-10">
                 <ResponsiveContainer>
                   <ComposedChart data={data.multivariate_stream}>
                     <defs>
@@ -274,7 +274,7 @@ export default function AnalyticsAndMetrics() {
                   <Target className="w-4 h-4 text-purple-400" />
                   Confusion Matrix
                 </h3>
-                <div className="grid grid-cols-2 gap-2 text-center h-[200px] content-center">
+                <div className="grid grid-cols-2 gap-2 text-center h-50 content-center">
                    <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex flex-col justify-center">
                       <span className="text-2xl font-bold text-emerald-400">{data.confusion_matrix[0][0]}</span>
                       <span className="text-[10px] uppercase text-emerald-200/50">True Neg</span>
@@ -300,7 +300,7 @@ export default function AnalyticsAndMetrics() {
                   <BarChart2 className="w-4 h-4 text-amber-400" />
                   ROC Analysis
                 </h3>
-                <div className="h-[200px]">
+                <div className="h-50">
                   <ResponsiveContainer>
                     <LineChart data={data.roc_curve}>
                       <CartesianGrid stroke="#222" strokeDasharray="3 3" />
@@ -324,7 +324,7 @@ export default function AnalyticsAndMetrics() {
               <h3 className="font-bold mb-4 text-sm uppercase tracking-wide text-gray-400 flex items-center gap-2">
                 <Cpu size={16} /> Feature Importance
               </h3>
-              <div className="h-[200px]">
+              <div className="h-50">
                 <ResponsiveContainer>
                   <BarChart layout="vertical" data={data.feature_importance}>
                     <XAxis type="number" hide />
@@ -340,7 +340,7 @@ export default function AnalyticsAndMetrics() {
             </div>
 
             {/* UN SDG 7 CARD */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-[#e5243b] to-[#a01626] text-white shadow-lg relative overflow-hidden group">
+            <div className="p-6 rounded-2xl bg-linear-to-br from-[#e5243b] to-[#a01626] text-white shadow-lg relative overflow-hidden group">
                <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
                <div className="flex justify-between items-start">
                    <div>
@@ -360,7 +360,7 @@ export default function AnalyticsAndMetrics() {
                 <h3 className="font-bold text-sm text-gray-400 mb-3 flex items-center gap-2">
                     <FileText size={14}/> Quick References
                 </h3>
-                <div className="max-h-[200px] overflow-y-auto pr-2 custom-scrollbar">
+                <div className="max-h-50 overflow-y-auto pr-2 custom-scrollbar">
                    {data.research_comparison.map(p => (
                       <CitationLink key={p.id} title={p.title} author={p.author} tag={p.tag} link={p.link} />
                    ))}

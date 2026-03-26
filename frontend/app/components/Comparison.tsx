@@ -21,7 +21,7 @@ interface BeeData {
 // --- Custom Components ---
 
 const StarRating = ({ rating }: { rating: number }) => (
-  <div className="flex gap-1 bg-black/40 p-2 rounded-lg border border-white/10 inline-block">
+  <div className="flex gap-1 bg-black/40 p-2 rounded-lg border border-white/10">
     {[1, 2, 3, 4, 5].map((star) => (
       <Award 
         key={star} 
@@ -67,7 +67,7 @@ export default function Comparison() {
 
   return (
     <section className="min-h-screen bg-[#050505] text-white px-4 md:px-8 py-12 font-sans">
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-400 mx-auto">
         
         {/* HEADER: Context Setting */}
         <div className="mb-12 border-b border-white/10 pb-8">
@@ -113,7 +113,7 @@ export default function Comparison() {
                     <StarRating rating={5} />
                 </div>
 
-                <div className="h-[400px]">
+                <div className="h-100">
                     <ResponsiveContainer>
                         <LineChart data={data.driftData}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#222" vertical={false} />
@@ -155,7 +155,7 @@ export default function Comparison() {
                 </h3>
                 <p className="text-xs text-gray-500 mb-6">Benchmarking against BEE & Environmental goals</p>
 
-                <div className="h-[350px]">
+                <div className="h-87.5">
                     <ResponsiveContainer>
                         <RadarChart outerRadius={120} data={data.radarData}>
                             <PolarGrid stroke="#333" />
@@ -179,7 +179,7 @@ export default function Comparison() {
                 </h3>
                 <p className="text-xs text-gray-500 mb-6">Identifying inefficient operational clusters</p>
                 
-                <div className="h-[300px]">
+                <div className="h-75">
                     <ResponsiveContainer>
                         <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#222" />
@@ -201,7 +201,7 @@ export default function Comparison() {
                 </h3>
                 <p className="text-xs text-gray-500 mb-6">Frequency of High-Consumption Events (Monthly)</p>
 
-                <div className="h-[300px]">
+                <div className="h-75">
                     <ResponsiveContainer>
                         <BarChart data={data.consumptionData}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#222" vertical={false} />
